@@ -1,7 +1,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2022 Ezgi Çalışkan
+Copyright (c) 2022 SUDTE (https://github.com/SUDTE)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
