@@ -36,7 +36,7 @@ namespace EwpApi.Validators
                 throw new EwpSecWebApplicationException("Missing required signed headers", HttpStatusCode.BadRequest);
             Log.Information("Signed headers test is successful");
 
-            // bu kısma bakılmalı!!!
+            // The code below doen not run on DefaultEwbsite on IIS 
             //if (string.IsNullOrEmpty(authRequest.Host))
             //    throw new EwpSecWebApplicationException("Host header is missing", HttpStatusCode.BadRequest);
             //if (!authRequest.Host.Equals(response.Host.Host))
@@ -124,8 +124,7 @@ namespace EwpApi.Validators
                 headerValues += "\n" + key + ":" + response.Headers[key];
                 allHeaders.Add(key, response.Headers[key]);
             }
-            //Dictionary<string, string> ss = response.Headers.ToDictionary(a => a.Key, a => string.Join(";", a.Value));
-
+            
             Log.Information("Recieved Response Header= \n" + headerValues);
             AuthRequest authRequest = new AuthRequest();
             authRequest.LoadHeadersWithValues(allHeaders);
